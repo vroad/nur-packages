@@ -15,7 +15,7 @@ let
     inherit rev;
     sha256 = "04faq4m1dlk43nwdmfhi6k2vfq053xn4hx334wkzc6r4qs5ayadw";
   };
-  cipdClientVersion = builtins.readFile "${src.outPath}/cipd_client_version";
+  cipdClientVersion = "git_revision:e75c9bf286fbb31347379cb478df2a556ab185b1";
   cipdClient = fetchurl {
     name = "cipd";
     url = "https://chrome-infra-packages.appspot.com/client?platform=linux-amd64&version=${cipdClientVersion}";
