@@ -1,9 +1,6 @@
 name: "Build and populate cache"
 on:
   push:
-  schedule:
-    # rebuild everyday at 4:50
-    - cron:  '50 4 * * *'
 jobs:
   tests:
     strategy:
