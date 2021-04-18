@@ -1,3 +1,4 @@
+# https://github.com/NixOS/nixpkgs/blob/38cef0ba3b4c215cf1d4d03d137c66d948bdf1be/pkgs/applications/virtualization/looking-glass-client/default.nix
 { lib, stdenv, fetchFromGitHub, cmake, pkg-config, SDL2, SDL2_ttf, spice-protocol
 , fontconfig, libX11, freefont_ttf, nettle, libpthreadstubs, libXau, libXdmcp
 , libXi, libXext, wayland, libffi, libGLU, expat, libbfd
