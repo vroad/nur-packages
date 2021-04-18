@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -eu
+: "$DEST_DIR"
+NAME=angle-clang
+SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+CLANG_REVISION="$(python tools/clang/scripts/update.py --print-revision)"
+CLANG_DOWNLOAD_URL="https://commondatastorage.googleapis.com/chromium-browser-clang/Linux_x64/clang-${CLANG_REVISION}.tgz"
+CLANG_SHA256="$(nix-prefetch fetchurl --name $NAME --url $CLANG_DOWNLOAD_URL)"
+jq -n --arg name "$NAME" \
+  --arg url "$CLANG_DOWNLOAD_URL" \
+  --arg sha256 "$CLANG_SHA256" \
+  '{name: $name, url: $url, sha256: $sha256}' > "$DEST_DIR/clang-src.json"

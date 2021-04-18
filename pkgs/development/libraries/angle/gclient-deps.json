@@ -1,0 +1,362 @@
+[
+  {
+    "type": "fetchgit",
+    "path": ".",
+    "name": "angle",
+    "url": "https://chromium.googlesource.com/angle/angle",
+    "rev": "0297dd80c5d23df7a651ec44e358d2c9ec7c6e53",
+    "sha256": "1y7dvcsin6kqw62s4267ydss6dr0j96xr558rgn3hpgjbrmyaw7p"
+  },
+  {
+    "type": "fetchcipd",
+    "path": "tools/luci-go",
+    "name": "angle-infra-tools-luci-isolate-linux-amd64",
+    "url": "https://chrome-infra-packages.appspot.com/dl/infra/tools/luci/isolate/linux-amd64/+/git_revision:fd10124659e991321df2f8a5d3749687b54ceb0a",
+    "rev": "git_revision:fd10124659e991321df2f8a5d3749687b54ceb0a",
+    "sha256": "152gy4zmb4q3wd76vbn5rrc815y48lr2n2qnmiglxrn9gai6qqh5"
+  },
+  {
+    "type": "fetchcipd",
+    "path": "tools/luci-go",
+    "name": "angle-infra-tools-luci-isolated-linux-amd64",
+    "url": "https://chrome-infra-packages.appspot.com/dl/infra/tools/luci/isolated/linux-amd64/+/git_revision:fd10124659e991321df2f8a5d3749687b54ceb0a",
+    "rev": "git_revision:fd10124659e991321df2f8a5d3749687b54ceb0a",
+    "sha256": "1cfj1x18bf3a14nfshfv1mx18kh2z596pz625fip5w2znz848s42"
+  },
+  {
+    "type": "fetchcipd",
+    "path": "tools/luci-go",
+    "name": "angle-infra-tools-luci-swarming-linux-amd64",
+    "url": "https://chrome-infra-packages.appspot.com/dl/infra/tools/luci/swarming/linux-amd64/+/git_revision:fd10124659e991321df2f8a5d3749687b54ceb0a",
+    "rev": "git_revision:fd10124659e991321df2f8a5d3749687b54ceb0a",
+    "sha256": "0yvbdjas780qvjbnhxf1m3ql1zgg9z114klz91zzy2sjcw8ggfbh"
+  },
+  {
+    "type": "fetchcipd",
+    "path": "tools/skia_goldctl/linux",
+    "name": "angle-skia-tools-goldctl-linux-amd64",
+    "url": "https://chrome-infra-packages.appspot.com/dl/skia/tools/goldctl/linux-amd64/+/FFNvbEArN40QplEcWmMIDG83rNyxP5fmhDHlHdE-Y94C",
+    "rev": "FFNvbEArN40QplEcWmMIDG83rNyxP5fmhDHlHdE-Y94C",
+    "sha256": "0l26xkbs3cayrfxdm5y3lfv8c2j5j32zv1glk9jb0w565m8f4f6d"
+  },
+  {
+    "type": "fetchcipd",
+    "path": "buildtools/linux64",
+    "name": "angle-gn-gn-linux-amd64",
+    "url": "https://chrome-infra-packages.appspot.com/dl/gn/gn/linux-amd64/+/git_revision:dfcbc6fed0a8352696f92d67ccad54048ad182b3",
+    "rev": "git_revision:dfcbc6fed0a8352696f92d67ccad54048ad182b3",
+    "sha256": "1brl28vs4sq20cri1ha1r2cfz81x8kc8w61121jiack4pmliy3xz"
+  },
+  {
+    "type": "fetchgit",
+    "path": "build",
+    "name": "angle-build",
+    "url": "https://chromium.googlesource.com/chromium/src/build.git",
+    "rev": "72bbbc35a825e690534bec0986e3931ffcd9ab04",
+    "sha256": "03dlhb3q1g9ljck163sm55xxhjkv4bzfcgf9y7s2d1g18n87dkhc"
+  },
+  {
+    "type": "fetchgit",
+    "path": "buildtools",
+    "name": "angle-buildtools",
+    "url": "https://chromium.googlesource.com/chromium/src/buildtools.git",
+    "rev": "4c78ef9c38b683c5c5cbac70445378c2362cebfc",
+    "sha256": "13fwdq32dzbbmm97l8iqmnca9hj8ih1n185ag3ww41w1y9ly9zfs"
+  },
+  {
+    "type": "fetchgit",
+    "path": "testing",
+    "name": "angle-testing",
+    "url": "https://chromium.googlesource.com/chromium/src/testing",
+    "rev": "677f5aa5b05e1b16409be4d357d1dab7a116de83",
+    "sha256": "0828qn64hnsgh88ix0svqms16xl5340bf50g48jbzcbapjxkm4ls"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/Python-Markdown",
+    "name": "angle-third_party-Python-Markdown",
+    "url": "https://chromium.googlesource.com/chromium/src/third_party/Python-Markdown",
+    "rev": "2bb7b23b6398f9e79bc2fa8c6bc64a3cf1613ebf",
+    "sha256": "0v2ksihvqnjsiccg6zxnd07cx1gj82p29xqxwa7zwwi6mmsn6x1l"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/SwiftShader",
+    "name": "angle-third_party-SwiftShader",
+    "url": "https://swiftshader.googlesource.com/SwiftShader",
+    "rev": "22186f076bf3bbe1a818792bde93b297e3773f7e",
+    "sha256": "1q7smiyzbr127ghrazpsn9mqw67r4a4vycfdy1xxbqysrz2sh8c6"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/VK-GL-CTS/src",
+    "name": "angle-third_party-VK-GL-CTS-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/VK-GL-CTS",
+    "rev": "9cdde06fb38a90b0fe76fd2b7849154ec603b49f",
+    "sha256": "0z2pp625vvcj439ybm72467lnsg94ad7wbgh6cwb246xbdgdkl02"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/abseil-cpp",
+    "name": "angle-third_party-abseil-cpp",
+    "url": "https://chromium.googlesource.com/chromium/src/third_party/abseil-cpp",
+    "rev": "4a1e66d2e54be92de6495a9b912e8405a5422475",
+    "sha256": "0dxnqm89j244dl9apd5pr0mxfyfzphc99s636j7nkhnazvysywzm"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/android_ndk",
+    "name": "angle-third_party-android_ndk",
+    "url": "https://chromium.googlesource.com/android_ndk.git",
+    "rev": "27c0a8d090c666a50e40fceb4ee5b40b1a2d3f87",
+    "sha256": "119jick99wnqhxz61cypwswdxm7x5n6fg2bxgip55zmdkv4a0gcs"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/catapult",
+    "name": "angle-third_party-catapult",
+    "url": "https://chromium.googlesource.com/catapult.git",
+    "rev": "370c3d98a6db53222e9f36a4491a3757bb93e61a",
+    "sha256": "0vp0r7byc7wzcpsg1n1sacwgy70bphvxis1337m8zbd9fjsi1ns1"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/cherry",
+    "name": "angle-third_party-cherry",
+    "url": "https://android.googlesource.com/platform/external/cherry",
+    "rev": "4f8fb08d33ca5ff05a1c638f04c85bbb8d8b52cc",
+    "sha256": "1v7q66r87324mw50l7wwa1nv95z09a49r0b5xhnh3jm1ivbjzmll"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/glmark2/src",
+    "name": "angle-third_party-glmark2-src",
+    "url": "https://chromium.googlesource.com/external/github.com/glmark2/glmark2",
+    "rev": "9e01aef1a786b28aca73135a5b00f85c357e8f5e",
+    "sha256": "1pfg5h09g77jn1ii695v6qb4v5dd1605rhbcikqsdh1g6l54bpw3"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/googletest",
+    "name": "angle-third_party-googletest",
+    "url": "https://chromium.googlesource.com/chromium/src/third_party/googletest",
+    "rev": "c20c5a3085ab4d90fdb403e3ac98e7991317dd27",
+    "sha256": "0kcpdwjkj8qinj0ldxgsvr63pvanhph6s8ziybfrpwq6bdnaw9yl"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/jsoncpp",
+    "name": "angle-third_party-jsoncpp",
+    "url": "https://chromium.googlesource.com/chromium/src/third_party/jsoncpp",
+    "rev": "30a6ac108e24dabac7c2e0df4d33d55032af4ee7",
+    "sha256": "18q8yr67x11dmx6dw14rs3s3z5znwng9j2l4rb8y0vgr4zzvl4h3"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/libjpeg_turbo",
+    "name": "angle-third_party-libjpeg_turbo",
+    "url": "https://chromium.googlesource.com/chromium/deps/libjpeg_turbo.git",
+    "rev": "fa0de07678c9828cc57b3eb086c03771912ba527",
+    "sha256": "1gm78k8zlws305f0yhy6jymmsysz2d20xf6svvf55cs86z4qfl8q"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/libpng/src",
+    "name": "angle-third_party-libpng-src",
+    "url": "https://android.googlesource.com/platform/external/libpng",
+    "rev": "094e181e79a3d6c23fd005679025058b7df1ad6c",
+    "sha256": "0h4fipj7qkl2w0pwxpviwcicbp85790ia6zzg6vv3n6xsci9rmnj"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/nasm",
+    "name": "angle-third_party-nasm",
+    "url": "https://chromium.googlesource.com/chromium/deps/nasm.git",
+    "rev": "19f3fad68da99277b2882939d3b2fa4c4b8d51d9",
+    "sha256": "18p6m0xy0hbh57js47y0nx8f51cs92jvykbcnanklx5473vmfdw9"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/protobuf",
+    "name": "angle-third_party-protobuf",
+    "url": "https://chromium.googlesource.com/chromium/src/third_party/protobuf",
+    "rev": "84a6931d875cbce0c6011eca684f23dcbd4c5a2a",
+    "sha256": "1p6910p2a891m9yvxamg47d3sr4ckyd3ypxcq9f4wp43pyi2hlk7"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/rapidjson/src",
+    "name": "angle-third_party-rapidjson-src",
+    "url": "https://chromium.googlesource.com/external/github.com/Tencent/rapidjson",
+    "rev": "7484e06c589873e1ed80382d262087e4fa80fb63",
+    "sha256": "0kj73x0x87b74v7r8ikkm3zx7bv4zcim4i5kbmgjrg8a2fnniazd"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps",
+    "name": "angle-third_party-vulkan-deps",
+    "url": "https://chromium.googlesource.com/vulkan-deps",
+    "rev": "55434360b05de701fa29aec60adb772ba274cade",
+    "sha256": "1j4j2hkjrdrqr4zyr4hfyqk6l46zvdbl0chvw0c6s5qswbk2divz"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan_memory_allocator",
+    "name": "angle-third_party-vulkan_memory_allocator",
+    "url": "https://chromium.googlesource.com/external/github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator",
+    "rev": "732a76d9d3c70d6aa487216495eeb28518349c3a",
+    "sha256": "1q3rk1irqrpjrlgnh7dpb8s8krzk9ixp6wkdwbi4x3l66iqrhjay"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/zlib",
+    "name": "angle-third_party-zlib",
+    "url": "https://chromium.googlesource.com/chromium/src/third_party/zlib",
+    "rev": "348acca950b1d6de784a954f4fda0952046c652c",
+    "sha256": "13vsyxicrhrdvp7927jd5abxw5xmab9ynw5mb7zk083dbx8lsv5y"
+  },
+  {
+    "type": "fetchgit",
+    "path": "tools/clang",
+    "name": "angle-tools-clang",
+    "url": "https://chromium.googlesource.com/chromium/src/tools/clang.git",
+    "rev": "cfd0f628093b7382ac054fb33e23fa9d9a278bc3",
+    "sha256": "1hpxxr5hjzl5vr2dnb6ky20m1kzpfccq6pzmiqcvf0cdzvpsjdzs"
+  },
+  {
+    "type": "fetchgit",
+    "path": "tools/mb",
+    "name": "angle-tools-mb",
+    "url": "https://chromium.googlesource.com/chromium/src/tools/mb",
+    "rev": "bf8d1f051b082d013df011fa74b48e9d70ddcc08",
+    "sha256": "1020vcah2qc14k9mcy4bkqfv4n4h86964kcl00cyz1b4is6xghy5"
+  },
+  {
+    "type": "fetchgit",
+    "path": "tools/md_browser",
+    "name": "angle-tools-md_browser",
+    "url": "https://chromium.googlesource.com/chromium/src/tools/md_browser",
+    "rev": "60141af3603925d99bf3fb22fdfca138416339b1",
+    "sha256": "04vk3gkd50mjs4za9wsxd56vbxqf7nybz27xpmgf94rajya3bm3q"
+  },
+  {
+    "type": "fetchgit",
+    "path": "tools/memory",
+    "name": "angle-tools-memory",
+    "url": "https://chromium.googlesource.com/chromium/src/tools/memory",
+    "rev": "71214b910decfe2e7cfc8b0ffc072a1b97da2d36",
+    "sha256": "05y8q728cy9yc15aqqh9bd1p58gp8pgrmlkh6x60wkfm8mphc8h1"
+  },
+  {
+    "type": "fetchgit",
+    "path": "tools/protoc_wrapper",
+    "name": "angle-tools-protoc_wrapper",
+    "url": "https://chromium.googlesource.com/chromium/src/tools/protoc_wrapper",
+    "rev": "0bdacc02464650c583db63806913af47ea0fe97d",
+    "sha256": "1cxjspr32mak9s10s8kd1r58xdf14nl51pw0l508f9jarkahsiad"
+  },
+  {
+    "type": "fetchgit",
+    "path": "buildtools/clang_format/script",
+    "name": "angle-buildtools-clang_format-script",
+    "url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/clang/tools/clang-format.git",
+    "rev": "99803d74e35962f63a775f29477882afd4d57d94",
+    "sha256": "14viy1yfm7v9bpclq2rzwqy3scdzlsygxsixwsxgbhyc20ds54rx"
+  },
+  {
+    "type": "fetchgit",
+    "path": "buildtools/third_party/libc++/trunk",
+    "name": "angle-buildtools-third_party-libc++-trunk",
+    "url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx.git",
+    "rev": "8fa87946779682841e21e2da977eccfb6cb3bded",
+    "sha256": "07c68101w9ac4xsqlykirfhjsnh25nlh6iq5f8w5bb82hjxx111h"
+  },
+  {
+    "type": "fetchgit",
+    "path": "buildtools/third_party/libc++abi/trunk",
+    "name": "angle-buildtools-third_party-libc++abi-trunk",
+    "url": "https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi.git",
+    "rev": "196ba1aaa8ac285d94f4ea8d9836390a45360533",
+    "sha256": "02ab4d5fknssi6126n8hljicgizqa9qc1xh10f40xn7ahycwj3jg"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/googletest/src",
+    "name": "angle-third_party-googletest-src",
+    "url": "https://chromium.googlesource.com/external/github.com/google/googletest.git",
+    "rev": "4fe018038f87675c083d0cfb6a6b57c274fb1753",
+    "sha256": "03nf4hv70v94h50sg5jwblrcv2yygarpx6arqk581jajcj78paks"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/jsoncpp/source",
+    "name": "angle-third_party-jsoncpp-source",
+    "url": "https://chromium.googlesource.com/external/github.com/open-source-parsers/jsoncpp.git",
+    "rev": "645250b6690785be60ab6780ce4b58698d884d11",
+    "sha256": "0nahgm9zi47kd47y1pakkrrjj7qpa5sbmjip44mm14iahxr5yx0v"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps/glslang/src",
+    "name": "angle-third_party-vulkan-deps-glslang-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/glslang",
+    "rev": "2e99822c148ce2cd3c2420041c13c17010a3e77c",
+    "sha256": "1g2kpmnqbgfzam8xi3srgmp2pd8l0ssv29jlp195kdpy43a9rsbd"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps/spirv-cross/src",
+    "name": "angle-third_party-vulkan-deps-spirv-cross-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/SPIRV-Cross",
+    "rev": "621884d70917038caf7509f7b1b3c143807ff43f",
+    "sha256": "1mqkr2j9313056w2fsmkzh5ddhs9s7vnfcmj6v655bmfs7jhjrp8"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps/spirv-headers/src",
+    "name": "angle-third_party-vulkan-deps-spirv-headers-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/SPIRV-Headers",
+    "rev": "faa570afbc91ac73d594d787486bcf8f2df1ace0",
+    "sha256": "04qfg5kfmxy7598pc25fv944vk6wydqvp2xqm8d7db872fw6m5my"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps/spirv-tools/src",
+    "name": "angle-third_party-vulkan-deps-spirv-tools-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/SPIRV-Tools",
+    "rev": "ef3290bbea35935ba8fd623970511ed9f045bbd7",
+    "sha256": "1jlayhls8c85kkwdq6rakqh4kgxf0zjvkyhv82vydxh62qn50pjn"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps/vulkan-headers/src",
+    "name": "angle-third_party-vulkan-deps-vulkan-headers-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/Vulkan-Headers",
+    "rev": "1d99b835ec3cd5a7fb2f2a2dd9a615ee2d1f0101",
+    "sha256": "1zqrhg0s4bsgrsqha534bc06180j0jmrhd0jhzyh4pnmyfgaanll"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps/vulkan-loader/src",
+    "name": "angle-third_party-vulkan-deps-vulkan-loader-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/Vulkan-Loader",
+    "rev": "c5678a03db383fd0dc5bfb8e9a383043bdbcb57b",
+    "sha256": "0xd1cpp21m0qi7zqvd3ahlzzvsphg725v99pnsy3ngx5wm6h1n10"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps/vulkan-tools/src",
+    "name": "angle-third_party-vulkan-deps-vulkan-tools-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/Vulkan-Tools",
+    "rev": "88ea55de928a08ba5c5f65a93d1e7c8f666fc43f",
+    "sha256": "1z1b6w5mni32aj632v0bixv0dhx21h36drcw65a97z03awxw93f8"
+  },
+  {
+    "type": "fetchgit",
+    "path": "third_party/vulkan-deps/vulkan-validation-layers/src",
+    "name": "angle-third_party-vulkan-deps-vulkan-validation-layers-src",
+    "url": "https://chromium.googlesource.com/external/github.com/KhronosGroup/Vulkan-ValidationLayers",
+    "rev": "521bc47360bf0db5e8db686a6d60d5908928571f",
+    "sha256": "0y9i903gqy3ch9clnrwx8ihp57vvfykwjvf3y0x3rg4bshd441nw"
+  }
+]
