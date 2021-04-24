@@ -1,7 +1,27 @@
 # https://github.com/NixOS/nixpkgs/blob/38cef0ba3b4c215cf1d4d03d137c66d948bdf1be/pkgs/applications/virtualization/looking-glass-client/default.nix
-{ lib, stdenv, fetchFromGitHub, cmake, pkg-config, SDL2, SDL2_ttf, spice-protocol
-, fontconfig, libX11, freefont_ttf, nettle, libXau, libXdmcp, libXi, libXext
-, wayland, libffi, expat, libbfd, libXScrnSaver, wayland-protocols, libXinerama
+{ lib
+, stdenv
+, fetchFromGitHub
+, cmake
+, pkg-config
+, SDL2
+, SDL2_ttf
+, spice-protocol
+, fontconfig
+, libX11
+, freefont_ttf
+, nettle
+, libXau
+, libXdmcp
+, libXi
+, libXext
+, wayland
+, libffi
+, expat
+, libbfd
+, libXScrnSaver
+, wayland-protocols
+, libXinerama
 }:
 
 stdenv.mkDerivation rec {
@@ -19,9 +39,24 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ cmake pkg-config ];
 
   buildInputs = [
-    SDL2 SDL2_ttf spice-protocol fontconfig libX11 freefont_ttf nettle
-    libXau libXdmcp libXi libXext wayland libffi expat libbfd libXScrnSaver
-    wayland-protocols libXinerama
+    SDL2
+    SDL2_ttf
+    spice-protocol
+    fontconfig
+    libX11
+    freefont_ttf
+    nettle
+    libXau
+    libXdmcp
+    libXi
+    libXext
+    wayland
+    libffi
+    expat
+    libbfd
+    libXScrnSaver
+    wayland-protocols
+    libXinerama
   ];
 
   sourceRoot = "source/client";
