@@ -25,10 +25,10 @@
 }:
 stdenv.mkDerivation rec {
   pname = "looking-glass-client";
-  version = "e22cd5f3f9e0c213c0184e87fe05a87067760b4c";
+  version = "5d5eb47598e74f7d398d4150267aa44d33eafd91";
 
   src = fetchFromGitHub {
-    owner = "vroad";
+    owner = "gnif";
     repo = "LookingGlass";
     rev = version;
     sha256 = "0x9zi1pkcva0lfn92gy9138vfakd8971snjxdqk383c1z6jyb9jh";
