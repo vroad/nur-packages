@@ -23,16 +23,15 @@
 , wayland-protocols
 , libXinerama
 }:
-
 stdenv.mkDerivation rec {
   pname = "looking-glass-client";
-  version = "ae36abb1ca3a645ac816667d6290121ac641cb01";
+  version = "e22cd5f3f9e0c213c0184e87fe05a87067760b4c";
 
   src = fetchFromGitHub {
-    owner = "gnif";
+    owner = "vroad";
     repo = "LookingGlass";
     rev = version;
-    sha256 = "1cgcnvs7kbqcn3sczl09js58q7y9lmq4w61wh2zq3s8p30144f9s";
+    sha256 = "0x9zi1pkcva0lfn92gy9138vfakd8971snjxdqk383c1z6jyb9jh";
     fetchSubmodules = true;
   };
 
