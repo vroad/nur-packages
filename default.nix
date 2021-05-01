@@ -9,7 +9,9 @@ in
 {
   modules = import ./modules; # NixOS modules
 
-  inherit qemu;
+  qemu = qemu.overrideAttrs (x: {
+    preferLocalBuild = true;
+  });
   qemu_kvm = pkgs.lowPrio (qemu.override { hostCpuOnly = true; });
 
   looking-glass-client = pkgs.callPackage ./pkgs/development/virtualization/looking-glass-client { };
