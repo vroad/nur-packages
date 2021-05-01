@@ -9,16 +9,17 @@ jobs:
           - vroad
         cachixName:
           - vroad
-        nixPath:
-          - nixpkgs=channel:nixpkgs-unstable
+        nixChannel:
+          - nixpkgs-unstable
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2.3.4
     - name: Install nix
       uses: cachix/install-nix-action@v13
-      with:
-        nix_path: "${{ matrix.nixPath }}"
+    - name: Set nix path
+      run: |
+        echo "NIX_PATH=nixpkgs=$(nix eval --raw '(with import ./nix/sources.nix;${{ matrix.nixChannel }}.outPath)')" >> $GITHUB_ENV
     - name: Show nixpkgs version
       run: nix-instantiate --eval -E '(import <nixpkgs> {}).lib.version'
     - name: Setup cachix
@@ -33,10 +34,8 @@ jobs:
           --option restrict-eval true \
           --option allow-import-from-derivation true \
           --drv-path --show-trace \
-          -I nixpkgs=$(nix-instantiate --find-file nixpkgs) \
           -I $PWD
     - name: Build nix packages
-      # TODO switch to default nixpkgs channel once nix-build-uncached 1.0.0 is in stable
-      run: nix run -I 'nixpkgs=channel:nixos-unstable' nixpkgs.nix-build-uncached -c nix-build-uncached ci.nix -A cacheOutputs
+      run: nix run nixpkgs.nix-build-uncached -c nix-build-uncached ci.nix -A cacheOutputs --arg pkgs 'import <nixpkgs> {}'
     - name: Trigger NUR update
       run: curl -XPOST "https://nur-update.herokuapp.com/update?repo=${{ matrix.nurRepo }}"

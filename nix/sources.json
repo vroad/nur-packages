@@ -1,5 +1,5 @@
 {
-    "nixpkgs": {
+    "nixpkgs-unstable": {
         "branch": "nixpkgs-unstable",
         "description": "Nix Packages collection",
         "homepage": "",
