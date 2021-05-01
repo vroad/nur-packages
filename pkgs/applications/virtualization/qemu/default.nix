@@ -82,6 +82,7 @@
       ++ [ "${stdenv.hostPlatform.qemuArch}-softmmu" ])
   else null)
 , nixosTestRunner ? false
+, pipewire
 }:
 
 with lib;
@@ -142,6 +143,8 @@ stdenv.mkDerivation rec {
     ++ optionals virglSupport [ virglrenderer ]
     ++ optionals libiscsiSupport [ libiscsi ]
     ++ optionals smbdSupport [ samba ];
+
+  runtimeDependencies = [ pipewire.jack ];
 
   dontUseMesonConfigure = true; # meson's configurePhase isn't compatible with qemu build
 
