@@ -11,6 +11,7 @@ jobs:
           - vroad
         nixChannel:
           - nixpkgs-unstable
+          - nixos-unstable
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
