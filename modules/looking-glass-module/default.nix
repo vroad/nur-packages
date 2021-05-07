@@ -29,24 +29,12 @@ in
       sizesAsStringList = builtins.map builtins.toString cfg.sizes;
       deviceIdList = builtins.map builtins.toString (lib.range 0 (length cfg.sizes - 1));
       kvmfrDevices = builtins.map (x: "/dev/kvmfr${x}") deviceIdList;
-      cgroupDeviceAcl = [
-        "/dev/null"
-        "/dev/full"
-        "/dev/zero"
-        "/dev/random"
-        "/dev/urandom"
-        "/dev/ptmx"
-        "/dev/kvm"
-      ] ++ kvmfrDevices;
     in
     {
       boot.kernelModules = [ "kvmfr" ];
       boot.extraModulePackages = [ kvmfr ];
       boot.extraModprobeConfig = ''
         options kvmfr static_size_mb=${lib.concatStringsSep "," sizesAsStringList}
-      '';
-      virtualisation.libvirtd.qemuVerbatimConfig = ''
-        cgroup_device_acl = [${lib.concatMapStringsSep "," (x: "\"${x}\"") cgroupDeviceAcl}]
       '';
       systemd.services.set-kvmfr-user = {
         wantedBy = [ "multi-user.target" ];
