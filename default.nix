@@ -1,4 +1,4 @@
-{ pkgs ? import (import ./nix/sources.nix).nixpkgs-unstable { } }:
+{ pkgs ? import (import ./nix/sources.nix).nixpkgs { } }:
 let
   qemu = with pkgs; callPackage ./pkgs/applications/virtualization/qemu {
     inherit (darwin.apple_sdk.frameworks) CoreServices Cocoa Hypervisor;
