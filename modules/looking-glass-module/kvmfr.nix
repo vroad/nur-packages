@@ -4,13 +4,13 @@ let
 in
 stdenv.mkDerivation rec {
   pname = "looking-glass-module";
-  version = "0a768a5a7fa12529469c2c6522de56fb70939a6d";
+  version = "ed0cae84c8ec3a7ba3777997c00b4cf7e3c71c40";
 
   src = fetchFromGitHub {
     owner = "gnif";
     repo = "LookingGlass";
     rev = version;
-    sha256 = "sha256-r9FOWMxWZNWpZszCnRppt00hL8D8kOEa1FXpRK3K/t8=";
+    sha256 = "sha256-bzfkbxo5/sJaN/wO5dqya9y+GsMFAj184hWt+UXWhyI=";
   };
   sourceRoot = "source/module";
 
