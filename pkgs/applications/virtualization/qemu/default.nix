@@ -103,11 +103,11 @@ stdenv.mkDerivation rec {
     + lib.optionalString xenSupport "-xen"
     + lib.optionalString hostCpuOnly "-host-cpu-only"
     + lib.optionalString nixosTestRunner "-for-vm-tests";
-  version = "7.0.0";
+  version = "6.2.0";
 
   src = fetchurl {
     url = "https://download.qemu.org/qemu-${version}.tar.xz";
-    sha256 = "sha256-9rN1x5UfcoQCeYsLqrsthkeMpT1Eztvvq74cRr9G+Dk=";
+    sha256 = "sha256-aOFdjkWsVjJuC5pK+otJo9/oq6NIgiHQmMhGmLymW0U=";
   };
 
   depsBuildBuild = [ buildPackages.stdenv.cc ];
@@ -161,34 +161,57 @@ stdenv.mkDerivation rec {
 
   patches = [
     ./fix-qemu-ga.patch
-
-    # QEMU upstream does not demand compatibility to pre-10.13, so 9p-darwin
-    # support on nix requires utimensat fallback. The patch adding this fallback
-    # set was removed during the process of upstreaming this functionality, and
-    # will still be needed in nix until the macOS SDK reaches 10.13+.
-    ./provide-fallback-for-utimensat.patch
+    ./9p-ignore-noatime.patch
     # Cocoa clipboard support only works on macOS 10.14+
-    ./revert-ui-cocoa-add-clipboard-support.patch
-    # Standard about panel requires AppKit and macOS 10.13+
     (fetchpatch {
-      url = "https://gitlab.com/qemu-project/qemu/-/commit/99eb313ddbbcf73c1adcdadceba1423b691c6d05.diff";
-      sha256 = "sha256-gTRf9XENAfbFB3asYCXnw4OV4Af6VE1W56K2xpYDhgM=";
+      url = "https://gitlab.com/qemu-project/qemu/-/commit/7e3e20d89129614f4a7b2451fe321cc6ccca3b76.diff";
+      sha256 = "09xz06g57wxbacic617pq9c0qb7nly42gif0raplldn5lw964xl2";
       revert = true;
     })
-    # Workaround for upstream issue with nested virtualisation: https://gitlab.com/qemu-project/qemu/-/issues/1008
+    # (fetchpatch {
+    #   name = "CVE-2021-4145.patch";
+    #   url = "https://gitlab.com/qemu-project/qemu/-/commit/66fed30c9cd11854fc878a4eceb507e915d7c9cd.patch";
+    #   sha256 = "10za2nag51y4fhc8z7fzw3dfhj37zx8rwg0xcmw5kzmb0gyvvz70";
+    # })
     (fetchpatch {
-      url = "https://gitlab.com/qemu-project/qemu/-/commit/3e4546d5bd38a1e98d4bd2de48631abf0398a3a2.diff";
-      sha256 = "sha256-oC+bRjEHixv1QEFO9XAm4HHOwoiT+NkhknKGPydnZ5E=";
-      revert = true;
+      name = "CVE-2022-26353.patch";
+      url = "https://gitlab.com/qemu-project/qemu/-/commit/abe300d9d894f7138e1af7c8e9c88c04bfe98b37.patch";
+      sha256 = "17s6968qbccsfljqb85wy4zvilwbbyjyb18nqwp3g40a6g4ajnbw";
     })
-    # make nixos tests that boot from USB more stable
-    # https://lists.nongnu.org/archive/html/qemu-devel/2022-05/msg01484.html
     (fetchpatch {
-      url = "https://gitlab.com/raboof/qemu/-/commit/3fb5e8fe4434130b1167a995b2a01c077cca2cd5.patch";
-      sha256 = "sha256-evzrN3i4ntc/AFG0C0rezQpQbWcnx74nXO+5DLErX8o=";
+      name = "CVE-2022-26354.patch";
+      url = "https://gitlab.com/qemu-project/qemu/-/commit/8d1b247f3748ac4078524130c6d7ae42b6140aaf.patch";
+      sha256 = "021d6pk0kh7fxn7rnq8g7cs34qac9qy6an858fxxs31gg9yqcfkl";
     })
-  ]
-  ++ lib.optional nixosTestRunner ./force-uid0-on-9p.patch;
+    (fetchpatch {
+      name = "CVE-2021-4206.patch";
+      url = "https://gitlab.com/qemu-project/qemu/-/commit/fa892e9abb728e76afcf27323ab29c57fb0fe7aa.patch";
+      sha256 = "1mlfiz488h83qrmbq7zmcw92rdh82za7jz3mw5xrhhvxw9d6rr01";
+    })
+    (fetchpatch {
+      name = "CVE-2021-4207.patch";
+      url = "https://gitlab.com/qemu-project/qemu/-/commit/9569f5cb5b4bffa9d3ebc8ba7da1e03830a9a895.patch";
+      sha256 = "14ph53pwdcgzzizmigrz444h8a46dsilnwkv0g224qz74rwxhgxz";
+    })
+  ] ++ lib.optional nixosTestRunner ./force-uid0-on-9p.patch
+  ++ lib.optionals stdenv.hostPlatform.isMusl [
+    ./sigrtminmax.patch
+    (fetchpatch {
+      url = "https://raw.githubusercontent.com/alpinelinux/aports/2bb133986e8fa90e2e76d53369f03861a87a74ef/main/qemu/fix-sigevent-and-sigval_t.patch";
+      sha256 = "0wk0rrcqywhrw9hygy6ap0lfg314m9z1wr2hn8338r5gfcw75mav";
+    })
+  ] ++ lib.optionals stdenv.isDarwin [
+    # The Hypervisor.framework support patch converted something that can be applied:
+    # * https://patchwork.kernel.org/project/qemu-devel/list/?series=548227
+    # The base revision is whatever commit there is before the series starts:
+    # * https://github.com/patchew-project/qemu/commits/patchew/20210916155404.86958-1-agraf%40csgraf.de
+    # The target revision is what patchew has as the series tag from patchwork:
+    # * https://github.com/patchew-project/qemu/releases/tag/patchew%2F20210916155404.86958-1-agraf%40csgraf.de
+    (fetchpatch {
+      url = "https://github.com/patchew-project/qemu/compare/7adb961995a3744f51396502b33ad04a56a317c3..d2603c06d9c4a28e714b9b70fe5a9d0c7b0f934d.diff";
+      sha256 = "sha256-nSi5pFf9+EefUmyJzSEKeuxOt39ztgkXQyUB8fTHlcY=";
+    })
+  ];
 
   postPatch = ''
     # Otherwise tries to ensure /var/run exists.
