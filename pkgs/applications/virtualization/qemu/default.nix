@@ -328,6 +328,8 @@ stdenv.mkDerivation rec {
   # Builds in ~3h with 2 cores, and ~20m with a big-parallel builder.
   requiredSystemFeatures = [ "big-parallel" ];
 
+  preferLocalBuild = true;
+
   meta = with lib; {
     homepage = "http://www.qemu.org/";
     description = "A generic and open source machine emulator and virtualizer";
