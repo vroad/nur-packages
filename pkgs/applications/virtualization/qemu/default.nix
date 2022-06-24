@@ -96,6 +96,8 @@
 , nixosTestRunner ? false
 , doCheck ? false
 , qemu  # for passthru.tests
+, pipewire
+, autoPatchelfHook
 }:
 
 stdenv.mkDerivation rec {
@@ -112,7 +114,7 @@ stdenv.mkDerivation rec {
 
   depsBuildBuild = [ buildPackages.stdenv.cc ];
 
-  nativeBuildInputs = [ makeWrapper removeReferencesTo pkg-config flex bison meson ninja perl python3 python3Packages.sphinx python3Packages.sphinx_rtd_theme ]
+  nativeBuildInputs = [ makeWrapper removeReferencesTo pkg-config flex bison meson ninja perl python3 python3Packages.sphinx python3Packages.sphinx_rtd_theme autoPatchelfHook ]
     ++ lib.optionals gtkSupport [ wrapGAppsHook ]
     ++ lib.optionals stdenv.isDarwin [ sigtool ];
 
@@ -284,7 +286,12 @@ stdenv.mkDerivation rec {
   # * https://github.com/qemu/qemu/blob/v6.1.0/scripts/entitlement.sh#L25
   dontStrip = stdenv.isDarwin;
 
+  dontAutoPatchelf = true;
+
   postFixup = ''
+    autoPatchelfLibs=(${lib.makeLibraryPath [ pipewire.jack ]} "''${autoPatchelfLibs[@]}")
+    autoPatchelf $out
+
     # the .desktop is both invalid and pointless
     rm -f $out/share/applications/qemu.desktop
   '' + lib.optionalString guestAgentSupport ''
