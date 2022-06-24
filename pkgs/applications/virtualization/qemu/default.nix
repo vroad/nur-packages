@@ -255,6 +255,7 @@ stdenv.mkDerivation rec {
     "--meson=meson"
     "--cross-prefix=${stdenv.cc.targetPrefix}"
     "--cpu=${stdenv.hostPlatform.uname.processor}"
+    "--audio-drv-list=pa,oss,jack"
     (lib.enableFeature guestAgentSupport "guest-agent")
   ] ++ lib.optional numaSupport "--enable-numa"
   ++ lib.optional seccompSupport "--enable-seccomp"
