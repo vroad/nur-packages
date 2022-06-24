@@ -1,7 +1,5 @@
-{ ... }:
+{ pkgs ? import (import ./nix/sources.nix { }).nixpkgs { } }:
 let
-  sources = import ./nix/sources.nix;
-  pkgs = import sources.nixpkgs { };
   qemu = with pkgs; callPackage ./pkgs/applications/virtualization/qemu {
     inherit (darwin.apple_sdk.frameworks) CoreServices Cocoa Hypervisor;
     inherit (darwin.stubs) rez setfile;
